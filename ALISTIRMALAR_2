@@ -110,3 +110,103 @@ print(i)#biraz uzun sürüyor ama çalışıyor
 
 #6.SORU
 
+def binary_search(dizi,x):
+    low = 0
+    high = len(dizi) - 1
+    mid = 0
+
+    while low <= high:
+        mid = (high + low)//2
+
+        if dizi[mid] < x:
+            low = mid + 1
+        elif dizi[mid] > x:
+            high = mid - 1
+        else:
+            return mid
+
+    return -1
+
+       #DİZİDE BİR ELEMAN OLMASI DURUMU
+"""dizi = [5]
+x = int(input("Aradığınız değeri giriniz : "))
+
+result = binary_search(dizi,x)
+
+if result != -1:
+    print(f"Aradığınız eleman dizidedir ve index'i {str(result)}'tır")
+else:
+    print("Aradığınız eleman dizide değil")"""
+
+
+       #DİZİDE TEK SAYIDA ELEMAN OLMASI DURUMU
+"""dizi = [1,2,3,4,5]
+x = int(input("Aradığınız değeri giriniz : "))
+
+result = binary_search(dizi,x)
+
+if result != -1:
+    print(f"Aradığınız eleman dizidedir ve index'i {str(result)}'tır")
+else:
+    print("Aradığınız eleman dizide değil")"""
+
+
+       #DİZİDE ÇİFT SAYIDA ELEMAN OLMASI DURUMU
+"""dizi = [1,2,3,4]
+x = int(input("Aradığınız değeri giriniz : "))
+
+result = binary_search(dizi,x)
+
+if result != -1:
+    print(f"Aradığınız eleman dizidedir ve index'i {str(result)}'tır")
+else:
+    print("Aradığınız eleman dizide değil")"""
+    
+
+#7.SORU
+
+def binary_search(dizi,low,high,x):
+    if high >= low:
+        mid = (high + low)//2
+        if dizi[mid] == x:
+            return mid
+        elif dizi[mid] > x:    #RECURSIVE CASE BURADA BAŞLIYOR
+            return binary_search(dizi,low,mid-1,x)
+        else:
+            return binary_search(dizi,mid+1,high,x)
+
+    else:
+        return -1
+
+       #DİZİDE BİR ELEMAN OLMASI DURUMU
+"""dizi = [5]
+x = int(input("Aradığınız değeri giriniz : "))
+
+result = binary_search(dizi,0,len(dizi)-1,x)
+
+if result != -1:
+    print(f"Aradığınız eleman dizidedir ve index'i {str(result)}'tır")
+else:
+    print("Aradığınız eleman dizide değil")"""
+
+       #DİZİDE TEK SAYIDA ELEMAN OLMASI DURUMU
+"""dizi = [1,2,3,4,5]
+x = int(input("Aradığınız değeri giriniz : "))
+
+result = binary_search(dizi,0,len(dizi)-1,x)
+
+if result != -1:
+    print(f"Aradığınız eleman dizidedir ve index'i {str(result)}'tır")
+else:
+    print("Aradığınız eleman dizide değil")"""
+
+       #DİZİDE ÇİFT SAYIDA ELEMAN OLMASI DURUMU
+"""dizi = [1,2,3,4]
+x = int(input("Aradığınız değeri giriniz : "))
+
+result = binary_search(dizi,0,len(dizi)-1,x)
+
+if result != -1:
+    print(f"Aradığınız eleman dizidedir ve index'i {str(result)}'tır")
+else:
+    print("Aradığınız eleman dizide değil")"""
